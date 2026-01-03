@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Global styling for the Netflix clone.
+  We set the default background, text color, and ensure proper font rendering.
+*/
+body {
+    @apply bg-[#0a0a0a] text-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+/*
+  Custom utility class to hide the scrollbar across browsers
+  while maintaining scroll functionality (common Netflix aesthetic).
+*/
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/*
+  Specific gradient class used on hero banners to smoothly fade the content
+  into the background color (#0a0a0a), preventing harsh edges.
+*/
+.fade-to-black-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 7.4rem;
+    width: 100%;
+    /* Gradient transition from transparent -> semi-black -> base black */
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.6),
+        #0a0a0a
+    );
+}
+
+/*
+  A generic centered container for modals or forms.
+*/
+.centered-container {
+    @apply flex items-center justify-center min-h-screen;
+}
